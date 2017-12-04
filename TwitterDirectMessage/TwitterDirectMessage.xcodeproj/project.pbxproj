@@ -10,9 +10,8 @@
 		A90127CE1FD5135C0097F830 /* MessagesCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A90127CD1FD5135C0097F830 /* MessagesCollectionViewController.swift */; };
 		A993B6F71FD4ABDF00D8CE38 /* MessageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A993B6F61FD4ABDF00D8CE38 /* MessageCollectionViewCell.swift */; };
 		A993B6F91FD4B29700D8CE38 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A993B6F81FD4B29700D8CE38 /* Extensions.swift */; };
-		A9C7AC1C1FD3D6AC00F88380 /* Follower.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9C7AC1B1FD3D6AC00F88380 /* Follower.swift */; };
+		A9C7AC1C1FD3D6AC00F88380 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9C7AC1B1FD3D6AC00F88380 /* User.swift */; };
 		A9C7AC1E1FD3D6BB00F88380 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9C7AC1D1FD3D6BB00F88380 /* Message.swift */; };
-		A9C7AC201FD3E33700F88380 /* TwitterAuth.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9C7AC1F1FD3E33700F88380 /* TwitterAuth.swift */; };
 		A9C7AC221FD3E49E00F88380 /* TwitterAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9C7AC211FD3E49E00F88380 /* TwitterAPI.swift */; };
 		A9C7AC241FD3F03D00F88380 /* FollowerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9C7AC231FD3F03D00F88380 /* FollowerTableViewCell.swift */; };
 		A9D836811FD39B8900A737B4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9D836801FD39B8900A737B4 /* AppDelegate.swift */; };
@@ -46,9 +45,8 @@
 		A90127CD1FD5135C0097F830 /* MessagesCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessagesCollectionViewController.swift; sourceTree = "<group>"; };
 		A993B6F61FD4ABDF00D8CE38 /* MessageCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageCollectionViewCell.swift; sourceTree = "<group>"; };
 		A993B6F81FD4B29700D8CE38 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
-		A9C7AC1B1FD3D6AC00F88380 /* Follower.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Follower.swift; sourceTree = "<group>"; };
+		A9C7AC1B1FD3D6AC00F88380 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		A9C7AC1D1FD3D6BB00F88380 /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
-		A9C7AC1F1FD3E33700F88380 /* TwitterAuth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TwitterAuth.swift; sourceTree = "<group>"; };
 		A9C7AC211FD3E49E00F88380 /* TwitterAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TwitterAPI.swift; sourceTree = "<group>"; };
 		A9C7AC231FD3F03D00F88380 /* FollowerTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FollowerTableViewCell.swift; sourceTree = "<group>"; };
 		A9D8367D1FD39B8900A737B4 /* TwitterDirectMessage.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TwitterDirectMessage.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -148,9 +146,8 @@
 		A9D836B11FD39F5D00A737B4 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				A9C7AC1B1FD3D6AC00F88380 /* Follower.swift */,
+				A9C7AC1B1FD3D6AC00F88380 /* User.swift */,
 				A9C7AC1D1FD3D6BB00F88380 /* Message.swift */,
-				A9C7AC1F1FD3E33700F88380 /* TwitterAuth.swift */,
 				A9C7AC211FD3E49E00F88380 /* TwitterAPI.swift */,
 			);
 			path = Model;
@@ -312,8 +309,7 @@
 			files = (
 				A90127CE1FD5135C0097F830 /* MessagesCollectionViewController.swift in Sources */,
 				A993B6F71FD4ABDF00D8CE38 /* MessageCollectionViewCell.swift in Sources */,
-				A9C7AC201FD3E33700F88380 /* TwitterAuth.swift in Sources */,
-				A9C7AC1C1FD3D6AC00F88380 /* Follower.swift in Sources */,
+				A9C7AC1C1FD3D6AC00F88380 /* User.swift in Sources */,
 				A9D836891FD39B8A00A737B4 /* TwitterDirectMessage.xcdatamodeld in Sources */,
 				A9D836B71FD3A03900A737B4 /* FollowersViewController.swift in Sources */,
 				A9D836811FD39B8900A737B4 /* AppDelegate.swift in Sources */,
