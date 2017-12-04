@@ -1,0 +1,638 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 48;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		A90127CE1FD5135C0097F830 /* MessagesCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A90127CD1FD5135C0097F830 /* MessagesCollectionViewController.swift */; };
+		A993B6F71FD4ABDF00D8CE38 /* MessageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A993B6F61FD4ABDF00D8CE38 /* MessageCollectionViewCell.swift */; };
+		A993B6F91FD4B29700D8CE38 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A993B6F81FD4B29700D8CE38 /* Extensions.swift */; };
+		A9C7AC1C1FD3D6AC00F88380 /* Follower.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9C7AC1B1FD3D6AC00F88380 /* Follower.swift */; };
+		A9C7AC1E1FD3D6BB00F88380 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9C7AC1D1FD3D6BB00F88380 /* Message.swift */; };
+		A9C7AC201FD3E33700F88380 /* TwitterAuth.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9C7AC1F1FD3E33700F88380 /* TwitterAuth.swift */; };
+		A9C7AC221FD3E49E00F88380 /* TwitterAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9C7AC211FD3E49E00F88380 /* TwitterAPI.swift */; };
+		A9C7AC241FD3F03D00F88380 /* FollowerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9C7AC231FD3F03D00F88380 /* FollowerTableViewCell.swift */; };
+		A9D836811FD39B8900A737B4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9D836801FD39B8900A737B4 /* AppDelegate.swift */; };
+		A9D836861FD39B8A00A737B4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A9D836841FD39B8A00A737B4 /* Main.storyboard */; };
+		A9D836891FD39B8A00A737B4 /* TwitterDirectMessage.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A9D836871FD39B8A00A737B4 /* TwitterDirectMessage.xcdatamodeld */; };
+		A9D8368B1FD39B8A00A737B4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A9D8368A1FD39B8A00A737B4 /* Assets.xcassets */; };
+		A9D8368E1FD39B8A00A737B4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A9D8368C1FD39B8A00A737B4 /* LaunchScreen.storyboard */; };
+		A9D836991FD39B8A00A737B4 /* TwitterDirectMessageTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9D836981FD39B8A00A737B4 /* TwitterDirectMessageTests.swift */; };
+		A9D836A41FD39B8A00A737B4 /* TwitterDirectMessageUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9D836A31FD39B8A00A737B4 /* TwitterDirectMessageUITests.swift */; };
+		A9D836B71FD3A03900A737B4 /* FollowersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9D836B61FD3A03900A737B4 /* FollowersViewController.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		A9D836951FD39B8A00A737B4 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A9D836751FD39B8900A737B4 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A9D8367C1FD39B8900A737B4;
+			remoteInfo = TwitterDirectMessage;
+		};
+		A9D836A01FD39B8A00A737B4 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A9D836751FD39B8900A737B4 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A9D8367C1FD39B8900A737B4;
+			remoteInfo = TwitterDirectMessage;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		A90127CD1FD5135C0097F830 /* MessagesCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessagesCollectionViewController.swift; sourceTree = "<group>"; };
+		A993B6F61FD4ABDF00D8CE38 /* MessageCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageCollectionViewCell.swift; sourceTree = "<group>"; };
+		A993B6F81FD4B29700D8CE38 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		A9C7AC1B1FD3D6AC00F88380 /* Follower.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Follower.swift; sourceTree = "<group>"; };
+		A9C7AC1D1FD3D6BB00F88380 /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
+		A9C7AC1F1FD3E33700F88380 /* TwitterAuth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TwitterAuth.swift; sourceTree = "<group>"; };
+		A9C7AC211FD3E49E00F88380 /* TwitterAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TwitterAPI.swift; sourceTree = "<group>"; };
+		A9C7AC231FD3F03D00F88380 /* FollowerTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FollowerTableViewCell.swift; sourceTree = "<group>"; };
+		A9D8367D1FD39B8900A737B4 /* TwitterDirectMessage.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TwitterDirectMessage.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		A9D836801FD39B8900A737B4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		A9D836851FD39B8A00A737B4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		A9D836881FD39B8A00A737B4 /* TwitterDirectMessage.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = TwitterDirectMessage.xcdatamodel; sourceTree = "<group>"; };
+		A9D8368A1FD39B8A00A737B4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		A9D8368D1FD39B8A00A737B4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		A9D8368F1FD39B8A00A737B4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A9D836941FD39B8A00A737B4 /* TwitterDirectMessageTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TwitterDirectMessageTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		A9D836981FD39B8A00A737B4 /* TwitterDirectMessageTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TwitterDirectMessageTests.swift; sourceTree = "<group>"; };
+		A9D8369A1FD39B8A00A737B4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A9D8369F1FD39B8A00A737B4 /* TwitterDirectMessageUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TwitterDirectMessageUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		A9D836A31FD39B8A00A737B4 /* TwitterDirectMessageUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TwitterDirectMessageUITests.swift; sourceTree = "<group>"; };
+		A9D836A51FD39B8A00A737B4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A9D836B61FD3A03900A737B4 /* FollowersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FollowersViewController.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		A9D8367A1FD39B8900A737B4 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A9D836911FD39B8A00A737B4 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A9D8369C1FD39B8A00A737B4 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		A9D836741FD39B8900A737B4 = {
+			isa = PBXGroup;
+			children = (
+				A9D8367F1FD39B8900A737B4 /* TwitterDirectMessage */,
+				A9D836971FD39B8A00A737B4 /* TwitterDirectMessageTests */,
+				A9D836A21FD39B8A00A737B4 /* TwitterDirectMessageUITests */,
+				A9D8367E1FD39B8900A737B4 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		A9D8367E1FD39B8900A737B4 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				A9D8367D1FD39B8900A737B4 /* TwitterDirectMessage.app */,
+				A9D836941FD39B8A00A737B4 /* TwitterDirectMessageTests.xctest */,
+				A9D8369F1FD39B8A00A737B4 /* TwitterDirectMessageUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		A9D8367F1FD39B8900A737B4 /* TwitterDirectMessage */ = {
+			isa = PBXGroup;
+			children = (
+				A9D836B31FD39F6B00A737B4 /* Controller */,
+				A9D836B21FD39F6600A737B4 /* View */,
+				A9D836B11FD39F5D00A737B4 /* Model */,
+				A9D836801FD39B8900A737B4 /* AppDelegate.swift */,
+				A9D8368A1FD39B8A00A737B4 /* Assets.xcassets */,
+				A9D8368C1FD39B8A00A737B4 /* LaunchScreen.storyboard */,
+				A9D8368F1FD39B8A00A737B4 /* Info.plist */,
+				A9D836871FD39B8A00A737B4 /* TwitterDirectMessage.xcdatamodeld */,
+			);
+			path = TwitterDirectMessage;
+			sourceTree = "<group>";
+		};
+		A9D836971FD39B8A00A737B4 /* TwitterDirectMessageTests */ = {
+			isa = PBXGroup;
+			children = (
+				A9D836981FD39B8A00A737B4 /* TwitterDirectMessageTests.swift */,
+				A9D8369A1FD39B8A00A737B4 /* Info.plist */,
+			);
+			path = TwitterDirectMessageTests;
+			sourceTree = "<group>";
+		};
+		A9D836A21FD39B8A00A737B4 /* TwitterDirectMessageUITests */ = {
+			isa = PBXGroup;
+			children = (
+				A9D836A31FD39B8A00A737B4 /* TwitterDirectMessageUITests.swift */,
+				A9D836A51FD39B8A00A737B4 /* Info.plist */,
+			);
+			path = TwitterDirectMessageUITests;
+			sourceTree = "<group>";
+		};
+		A9D836B11FD39F5D00A737B4 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				A9C7AC1B1FD3D6AC00F88380 /* Follower.swift */,
+				A9C7AC1D1FD3D6BB00F88380 /* Message.swift */,
+				A9C7AC1F1FD3E33700F88380 /* TwitterAuth.swift */,
+				A9C7AC211FD3E49E00F88380 /* TwitterAPI.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		A9D836B21FD39F6600A737B4 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				A9D836841FD39B8A00A737B4 /* Main.storyboard */,
+				A9C7AC231FD3F03D00F88380 /* FollowerTableViewCell.swift */,
+				A993B6F61FD4ABDF00D8CE38 /* MessageCollectionViewCell.swift */,
+				A993B6F81FD4B29700D8CE38 /* Extensions.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		A9D836B31FD39F6B00A737B4 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				A9D836B61FD3A03900A737B4 /* FollowersViewController.swift */,
+				A90127CD1FD5135C0097F830 /* MessagesCollectionViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		A9D8367C1FD39B8900A737B4 /* TwitterDirectMessage */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A9D836A81FD39B8A00A737B4 /* Build configuration list for PBXNativeTarget "TwitterDirectMessage" */;
+			buildPhases = (
+				A9D836791FD39B8900A737B4 /* Sources */,
+				A9D8367A1FD39B8900A737B4 /* Frameworks */,
+				A9D8367B1FD39B8900A737B4 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = TwitterDirectMessage;
+			productName = TwitterDirectMessage;
+			productReference = A9D8367D1FD39B8900A737B4 /* TwitterDirectMessage.app */;
+			productType = "com.apple.product-type.application";
+		};
+		A9D836931FD39B8A00A737B4 /* TwitterDirectMessageTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A9D836AB1FD39B8A00A737B4 /* Build configuration list for PBXNativeTarget "TwitterDirectMessageTests" */;
+			buildPhases = (
+				A9D836901FD39B8A00A737B4 /* Sources */,
+				A9D836911FD39B8A00A737B4 /* Frameworks */,
+				A9D836921FD39B8A00A737B4 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				A9D836961FD39B8A00A737B4 /* PBXTargetDependency */,
+			);
+			name = TwitterDirectMessageTests;
+			productName = TwitterDirectMessageTests;
+			productReference = A9D836941FD39B8A00A737B4 /* TwitterDirectMessageTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		A9D8369E1FD39B8A00A737B4 /* TwitterDirectMessageUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A9D836AE1FD39B8A00A737B4 /* Build configuration list for PBXNativeTarget "TwitterDirectMessageUITests" */;
+			buildPhases = (
+				A9D8369B1FD39B8A00A737B4 /* Sources */,
+				A9D8369C1FD39B8A00A737B4 /* Frameworks */,
+				A9D8369D1FD39B8A00A737B4 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				A9D836A11FD39B8A00A737B4 /* PBXTargetDependency */,
+			);
+			name = TwitterDirectMessageUITests;
+			productName = TwitterDirectMessageUITests;
+			productReference = A9D8369F1FD39B8A00A737B4 /* TwitterDirectMessageUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		A9D836751FD39B8900A737B4 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0910;
+				LastUpgradeCheck = 0910;
+				ORGANIZATIONNAME = "Marco Valentino";
+				TargetAttributes = {
+					A9D8367C1FD39B8900A737B4 = {
+						CreatedOnToolsVersion = 9.1;
+						ProvisioningStyle = Automatic;
+					};
+					A9D836931FD39B8A00A737B4 = {
+						CreatedOnToolsVersion = 9.1;
+						ProvisioningStyle = Automatic;
+						TestTargetID = A9D8367C1FD39B8900A737B4;
+					};
+					A9D8369E1FD39B8A00A737B4 = {
+						CreatedOnToolsVersion = 9.1;
+						ProvisioningStyle = Automatic;
+						TestTargetID = A9D8367C1FD39B8900A737B4;
+					};
+				};
+			};
+			buildConfigurationList = A9D836781FD39B8900A737B4 /* Build configuration list for PBXProject "TwitterDirectMessage" */;
+			compatibilityVersion = "Xcode 8.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = A9D836741FD39B8900A737B4;
+			productRefGroup = A9D8367E1FD39B8900A737B4 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				A9D8367C1FD39B8900A737B4 /* TwitterDirectMessage */,
+				A9D836931FD39B8A00A737B4 /* TwitterDirectMessageTests */,
+				A9D8369E1FD39B8A00A737B4 /* TwitterDirectMessageUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		A9D8367B1FD39B8900A737B4 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A9D8368E1FD39B8A00A737B4 /* LaunchScreen.storyboard in Resources */,
+				A9D8368B1FD39B8A00A737B4 /* Assets.xcassets in Resources */,
+				A9D836861FD39B8A00A737B4 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A9D836921FD39B8A00A737B4 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A9D8369D1FD39B8A00A737B4 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		A9D836791FD39B8900A737B4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A90127CE1FD5135C0097F830 /* MessagesCollectionViewController.swift in Sources */,
+				A993B6F71FD4ABDF00D8CE38 /* MessageCollectionViewCell.swift in Sources */,
+				A9C7AC201FD3E33700F88380 /* TwitterAuth.swift in Sources */,
+				A9C7AC1C1FD3D6AC00F88380 /* Follower.swift in Sources */,
+				A9D836891FD39B8A00A737B4 /* TwitterDirectMessage.xcdatamodeld in Sources */,
+				A9D836B71FD3A03900A737B4 /* FollowersViewController.swift in Sources */,
+				A9D836811FD39B8900A737B4 /* AppDelegate.swift in Sources */,
+				A9C7AC221FD3E49E00F88380 /* TwitterAPI.swift in Sources */,
+				A9C7AC1E1FD3D6BB00F88380 /* Message.swift in Sources */,
+				A993B6F91FD4B29700D8CE38 /* Extensions.swift in Sources */,
+				A9C7AC241FD3F03D00F88380 /* FollowerTableViewCell.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A9D836901FD39B8A00A737B4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A9D836991FD39B8A00A737B4 /* TwitterDirectMessageTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A9D8369B1FD39B8A00A737B4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A9D836A41FD39B8A00A737B4 /* TwitterDirectMessageUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		A9D836961FD39B8A00A737B4 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = A9D8367C1FD39B8900A737B4 /* TwitterDirectMessage */;
+			targetProxy = A9D836951FD39B8A00A737B4 /* PBXContainerItemProxy */;
+		};
+		A9D836A11FD39B8A00A737B4 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = A9D8367C1FD39B8900A737B4 /* TwitterDirectMessage */;
+			targetProxy = A9D836A01FD39B8A00A737B4 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		A9D836841FD39B8A00A737B4 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A9D836851FD39B8A00A737B4 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		A9D8368C1FD39B8A00A737B4 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A9D8368D1FD39B8A00A737B4 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		A9D836A61FD39B8A00A737B4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		A9D836A71FD39B8A00A737B4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		A9D836A91FD39B8A00A737B4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 3M4QJ8P9BX;
+				INFOPLIST_FILE = TwitterDirectMessage/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = valentino.TwitterDirectMessage;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		A9D836AA1FD39B8A00A737B4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 3M4QJ8P9BX;
+				INFOPLIST_FILE = TwitterDirectMessage/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = valentino.TwitterDirectMessage;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		A9D836AC1FD39B8A00A737B4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = TwitterDirectMessageTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = valentino.TwitterDirectMessageTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TwitterDirectMessage.app/TwitterDirectMessage";
+			};
+			name = Debug;
+		};
+		A9D836AD1FD39B8A00A737B4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = TwitterDirectMessageTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = valentino.TwitterDirectMessageTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TwitterDirectMessage.app/TwitterDirectMessage";
+			};
+			name = Release;
+		};
+		A9D836AF1FD39B8A00A737B4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = TwitterDirectMessageUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = valentino.TwitterDirectMessageUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = TwitterDirectMessage;
+			};
+			name = Debug;
+		};
+		A9D836B01FD39B8A00A737B4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = TwitterDirectMessageUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = valentino.TwitterDirectMessageUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = TwitterDirectMessage;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		A9D836781FD39B8900A737B4 /* Build configuration list for PBXProject "TwitterDirectMessage" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A9D836A61FD39B8A00A737B4 /* Debug */,
+				A9D836A71FD39B8A00A737B4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A9D836A81FD39B8A00A737B4 /* Build configuration list for PBXNativeTarget "TwitterDirectMessage" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A9D836A91FD39B8A00A737B4 /* Debug */,
+				A9D836AA1FD39B8A00A737B4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A9D836AB1FD39B8A00A737B4 /* Build configuration list for PBXNativeTarget "TwitterDirectMessageTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A9D836AC1FD39B8A00A737B4 /* Debug */,
+				A9D836AD1FD39B8A00A737B4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A9D836AE1FD39B8A00A737B4 /* Build configuration list for PBXNativeTarget "TwitterDirectMessageUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A9D836AF1FD39B8A00A737B4 /* Debug */,
+				A9D836B01FD39B8A00A737B4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		A9D836871FD39B8A00A737B4 /* TwitterDirectMessage.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				A9D836881FD39B8A00A737B4 /* TwitterDirectMessage.xcdatamodel */,
+			);
+			currentVersion = A9D836881FD39B8A00A737B4 /* TwitterDirectMessage.xcdatamodel */;
+			path = TwitterDirectMessage.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = A9D836751FD39B8900A737B4 /* Project object */;
+}
