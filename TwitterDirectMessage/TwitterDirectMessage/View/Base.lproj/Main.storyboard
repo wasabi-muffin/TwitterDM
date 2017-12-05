@@ -63,10 +63,6 @@
                                     <outlet property="delegate" destination="CAl-tY-rou" id="jwL-6n-0aY"/>
                                 </connections>
                             </tableView>
-                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="229-S9-oeQ">
-                                <rect key="frame" x="0.0" y="323" width="375" height="20"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -79,7 +75,6 @@
                     </view>
                     <navigationItem key="navigationItem" title="Twitter DM" id="afu-mG-Nvi"/>
                     <connections>
-                        <outlet property="indicator" destination="229-S9-oeQ" id="RVn-eE-2Hz"/>
                         <outlet property="tableView" destination="n5s-8n-stV" id="cAq-qO-4UV"/>
                     </connections>
                 </viewController>

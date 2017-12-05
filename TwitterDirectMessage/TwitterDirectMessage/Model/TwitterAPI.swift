@@ -19,8 +19,9 @@ class TwitterAPI {
         account.requestAccessToAccounts(with: accountType, options: nil, completion: {(success, error) in
             if success {
                 if let twitterAccount = self.account.accounts(with: self.accountType).last as? ACAccount {
-                    let user = User(username: twitterAccount.username, picture: "")
-                    completion(user)
+                    let user = User(context: AppDelegate.viewContext)
+                    user.username = twitterAccount.username
+                    completion(User.getUser(matching: user, in: AppDelegate.viewContext))
                 }
             }
         })
@@ -48,10 +49,11 @@ class TwitterAPI {
                             let username = item["screen_name"] as! String
                             let pictureURL = item["profile_image_url_https"] as! String
                             print("USER: ", item)
-                            let follower = User(username: username, picture: pictureURL)
-                            followers.append(follower)
+                            let follower = User(context: AppDelegate.viewContext)
+                            follower.username = username
+                            follower.profilePictureURL = pictureURL
+                            followers.append(User.getUser(matching: follower, in: AppDelegate.viewContext))
                         }
-                        print("Followers from API ", followers)
                         completion(followers)
                     } catch let error as NSError {
                         print("Data serialization error: \(error.localizedDescription)")

@@ -36,11 +36,12 @@ class MessagesCollectionViewController: UICollectionViewController, UICollection
     let inputTextView: UITextView = {
         let textView = UITextView()
         textView.backgroundColor = UIColor.white
-        //textView.font = UIFont(name: (textView.font?.fontName)!, size: 18)
+        textView.font = .systemFont(ofSize: 18)
+        textView.sizeToFit()
         textView.layer.cornerRadius = 2
         textView.layer.masksToBounds = true
         textView.textContainer.lineBreakMode = .byWordWrapping
-        textView.textContainerInset = UIEdgeInsets(top: 0, left: 16, bottom: 0, right: 16)
+        textView.textContainerInset = UIEdgeInsets(top: 0, left: 8, bottom: 0, right: 8)
         return textView
     }()
     
@@ -49,17 +50,32 @@ class MessagesCollectionViewController: UICollectionViewController, UICollection
         button.setTitle("Post", for: .normal)
         button.setTitleColor(UIColor(red: 0, green: 137/255, blue: 249/255, alpha: 1), for: .normal)
         button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 18)
+        button.addTarget(self, action: #selector(handleSend), for: UIControlEvents.touchUpInside)
         return button
     }()
+    
+    @objc func handleSend() {
+        let message = Message.sendMessage(from: user!, to: follower!, content: inputTextView.text!, in: AppDelegate.viewContext)
+        do {
+            try AppDelegate.viewContext.save() }
+        catch {
+            print("Saving did not work")
+        }
+        print(message)
+        messages?.append(message)
+        //collectionView?.insertItems(at: [IndexPath(item: messages!.count - 1, section: 0)])
+        collectionView?.reloadData()
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         collectionView?.backgroundColor = UIColor.white
         self.collectionView!.register(MessageCollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
-        self.messages = Message.getMessages(from: "test", to: "test")
+        self.messages = Message.getMessages(between: user!, and: follower!, in: AppDelegate.viewContext)
+        print(self.messages)
         view.addSubview(messageInputContainerView)
         view.addConstraintsWithFormat(format: "H:|[v0]|", views: messageInputContainerView)
-        view.addConstraintsWithFormat(format: "V:[v0(48)]", views: messageInputContainerView)
+//        view.addConstraintsWithFormat(format: "V:[v0(48)]", views: messageInputContainerView)
         bottomConstraint = NSLayoutConstraint(item: messageInputContainerView, attribute: .bottom, relatedBy: .equal, toItem: view, attribute: .bottom, multiplier: 1, constant: 0)
         view.addConstraint(bottomConstraint!)
         setupInputComponents()
@@ -78,7 +94,7 @@ class MessagesCollectionViewController: UICollectionViewController, UICollection
                 self.view.layoutIfNeeded()
                 UIView.animate(withDuration: 0, delay: 0, options: UIViewAnimationOptions.curveEaseOut, animations: {}, completion: { result in
                     let indexPath = IndexPath(item: self.messages!.count - 1, section: 0)
-                    self.collectionView?.scrollToItem(at: indexPath, at: .bottom, animated: true)
+                    //self.collectionView?.scrollToItem(at: indexPath, at: .bottom, animated: true)
                     let viewHeight = self.view.frame.height - keyboardFrame!.height
                     self.collectionView?.setContentOffset(CGPoint(x: 0, y: (self.collectionView?.contentSize.height)! - viewHeight), animated: false)
                 })
@@ -98,9 +114,9 @@ class MessagesCollectionViewController: UICollectionViewController, UICollection
         messageInputContainerView.addConstraintsWithFormat(format: "V:|[v0]|", views: sendButton)
         messageInputContainerView.addConstraintsWithFormat(format: "H:|[v0]|", views: topBorderView)
         messageInputContainerView.addConstraintsWithFormat(format: "V:|[v0(0.5)]", views: topBorderView)
-
-
     }
+    
+    
 
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return (self.messages?.count)!
@@ -114,10 +130,10 @@ class MessagesCollectionViewController: UICollectionViewController, UICollection
             let messageText = message.content
             let size = CGSize(width: 250, height: 1000)
             let options = NSStringDrawingOptions.usesFontLeading.union(.usesLineFragmentOrigin)
-            let estimatedFrame = NSString(string: messageText).boundingRect(with: size, options: options, attributes: [NSAttributedStringKey.font: UIFont.systemFont(ofSize: 18)], context: nil)
+            let estimatedFrame = NSString(string: messageText!).boundingRect(with: size, options: options, attributes: [NSAttributedStringKey.font: UIFont.systemFont(ofSize: 18)], context: nil)
             
             // Right Bubble
-            if  message.fromUser == (user?.username)! {
+            if  message.fromUser == user {
                 cell.messageTextView.frame = CGRect(x: view.frame.width - estimatedFrame.width - 24 - 8 - 4, y: 0, width: estimatedFrame.width + 16, height: estimatedFrame.height + 20)
                 cell.messageTextView.textColor = UIColor.white
                 cell.textBubbleView.frame = CGRect(x: view.frame.width - estimatedFrame.width - 24 - 8 - 16, y: -2, width: estimatedFrame.width + 16 + 8 + 16, height: estimatedFrame.height + 20 + 4)

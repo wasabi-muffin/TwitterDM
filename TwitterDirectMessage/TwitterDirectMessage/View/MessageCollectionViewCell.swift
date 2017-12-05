@@ -29,7 +29,6 @@ class MessageCollectionViewCell: UICollectionViewCell {
     
     let textBubbleView: UIView = {
         let view = UIView()
-//        view.backgroundColor = UIColor.black
         view.layer.cornerRadius = 15
         view.layer.masksToBounds = true
         return view
