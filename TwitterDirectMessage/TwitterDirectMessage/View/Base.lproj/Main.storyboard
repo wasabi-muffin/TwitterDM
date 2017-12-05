@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="NWa-hO-FCI">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="NWa-hO-FCI">
     <device id="retina5_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -29,7 +29,11 @@
                                             <rect key="frame" x="0.0" y="0.0" width="381" height="59.666666666666664"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="i55-of-BjF">
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Qs1-LV-s5s">
+                                                    <rect key="frame" x="0.0" y="0.0" width="60" height="60"/>
+                                                    <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                </view>
+                                                <imageView userInteractionEnabled="NO" alpha="0.0" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="i55-of-BjF">
                                                     <rect key="frame" x="0.0" y="0.0" width="60" height="60"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="60" id="M7N-27-TCJ"/>
@@ -44,12 +48,16 @@
                                                 </label>
                                             </subviews>
                                             <constraints>
+                                                <constraint firstItem="Qs1-LV-s5s" firstAttribute="leading" secondItem="i55-of-BjF" secondAttribute="leading" id="2XP-lG-QJc"/>
                                                 <constraint firstAttribute="trailing" secondItem="seF-9a-5CE" secondAttribute="trailing" constant="15" id="51e-5D-wgw"/>
                                                 <constraint firstItem="seF-9a-5CE" firstAttribute="leading" secondItem="i55-of-BjF" secondAttribute="trailing" constant="8" id="AxR-sx-O8p"/>
+                                                <constraint firstItem="Qs1-LV-s5s" firstAttribute="width" secondItem="i55-of-BjF" secondAttribute="width" id="EOo-o5-jEe"/>
                                                 <constraint firstItem="i55-of-BjF" firstAttribute="top" secondItem="vx6-Pc-VDx" secondAttribute="top" id="EnS-Nf-XNX"/>
+                                                <constraint firstItem="Qs1-LV-s5s" firstAttribute="height" secondItem="i55-of-BjF" secondAttribute="height" id="GFc-ho-7hb"/>
                                                 <constraint firstItem="i55-of-BjF" firstAttribute="leading" secondItem="vx6-Pc-VDx" secondAttribute="leading" id="K84-Cg-Y6y"/>
                                                 <constraint firstAttribute="bottom" secondItem="i55-of-BjF" secondAttribute="bottom" id="NiF-yc-2Ln"/>
                                                 <constraint firstItem="seF-9a-5CE" firstAttribute="centerY" secondItem="vx6-Pc-VDx" secondAttribute="centerY" id="iTv-CB-B7g"/>
+                                                <constraint firstItem="Qs1-LV-s5s" firstAttribute="top" secondItem="i55-of-BjF" secondAttribute="top" id="zIs-fk-4D8"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
@@ -80,7 +88,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1LD-O7-ORg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="851.5" y="41.5"/>
+            <point key="canvasLocation" x="850.72463768115949" y="40.760869565217398"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="otw-RK-M67">

@@ -14,7 +14,6 @@ class FollowersViewController: UIViewController, UITableViewDelegate, UITableVie
     @IBOutlet weak var tableView: UITableView!
     
     var user: User?
-    
     var followers = [User]() {
         didSet {
             tableView.reloadData()
@@ -38,8 +37,8 @@ class FollowersViewController: UIViewController, UITableViewDelegate, UITableVie
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = self.tableView.dequeueReusableCell(withIdentifier: "FollowerCell") as! FollowerTableViewCell
         let follower = self.followers[indexPath.row]
-        cell.usernameLabel?.text = "@" + follower.username!
-        //cell.profileImage.downloadedFrom(link: follower.profilePictureURL)
+        cell.usernameLabel?.text = "@" + follower.username
+        cell.loadImageWithUrlString(follower.profileURL)
         return cell
     }
     

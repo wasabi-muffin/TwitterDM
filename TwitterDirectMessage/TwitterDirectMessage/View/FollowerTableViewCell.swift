@@ -12,10 +12,29 @@ class FollowerTableViewCell: UITableViewCell {
 
     @IBOutlet weak var profileImage: UIImageView!
     @IBOutlet weak var usernameLabel: UILabel!
-    
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
-    }
 
+    func loadImageWithUrlString(_ urlStringOptional: String?) {
+        
+        guard let urlString = urlStringOptional else {
+            return
+        }
+        
+        let url = URL(string: urlString)
+        URLSession.shared.dataTask(with: url!, completionHandler: { (data, response, error) in
+            
+            if let error = error { print(error); return }
+            
+            DispatchQueue.main.async(execute: {
+                
+                if let downloadedImage = UIImage(data: data!) {
+                    self.profileImage.image = downloadedImage
+                    UIView.animate(withDuration: 0.2, animations: {
+                        self.profileImage.alpha = 1
+                    })
+                    
+                }
+            })
+            
+        }).resume()
+    }
 }

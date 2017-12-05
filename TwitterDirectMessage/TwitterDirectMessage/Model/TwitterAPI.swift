@@ -19,13 +19,13 @@ class TwitterAPI {
         account.requestAccessToAccounts(with: accountType, options: nil, completion: {(success, error) in
             if success {
                 if let twitterAccount = self.account.accounts(with: self.accountType).last as? ACAccount {
-                    completion(User.getUser(matching: twitterAccount.username, profilePictureURL: "", in: AppDelegate.viewContext))
+                    //completion(User.getUser(matching: twitterAccount.username, profilePictureURL: "", in: AppDelegate.viewContext))
+                    completion(User(username: twitterAccount.username, profileURL: ""))
                 }
             }
         })
     }
 
-    
     func getTwitterFollowers(completion: @escaping (([User]) -> Void)) {
         self.account.requestAccessToAccounts(with: accountType, options: nil, completion: {(success, error) in
             if success {
@@ -46,7 +46,7 @@ class TwitterAPI {
                         for item in users {
                             let username = item["screen_name"] as! String
                             let pictureURL = item["profile_image_url_https"] as! String
-                            followers.append(User.getUser(matching: username, profilePictureURL: pictureURL, in: AppDelegate.viewContext))
+                            followers.append(User(username: username, profileURL: pictureURL))
                         }
                         completion(followers)
                     } catch let error as NSError {

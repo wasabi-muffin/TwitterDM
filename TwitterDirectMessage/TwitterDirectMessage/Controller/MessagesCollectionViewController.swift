@@ -14,9 +14,9 @@ class MessagesCollectionViewController: UICollectionViewController, UICollection
 
     private let reuseIdentifier = "MessageCell"
     
-    var user: User?
+    var user: User!
     
-    var follower: User? {
+    var follower: User! {
         didSet {
             navigationItem.title = follower?.username
         }
@@ -57,22 +57,13 @@ class MessagesCollectionViewController: UICollectionViewController, UICollection
     
     @objc func handleSend() {
         let text = inputTextView.text!
-        AppDelegate.viewContext.perform {
-            let userMessage = Message.sendMessage(from: self.user!, to: self.follower!, content: text, in: AppDelegate.viewContext)
-            self.messages?.append(userMessage)
-            self.inputTextView.text = nil
-            try? AppDelegate.viewContext.save()
-        }
-//        collectionView?.setContentOffset(CGPoint(x: 0, y: collectionView!.contentSize.height), animated: false)
-//        collectionView?.reloadData()
+        let userMessage = Message(content: text, fromUser: user.username, toUser: follower.username)
+        self.messages?.append(userMessage)
+        self.inputTextView.text = nil
         
         Timer.scheduledTimer(withTimeInterval: 1.0, repeats: false) { (timer) in
-            AppDelegate.viewContext.perform {
-                let followerMessage = Message.sendMessage(from: self.follower!, to: self.user!, content: (text + " " + text), in: AppDelegate.viewContext)
-                self.messages?.append(followerMessage)
-//                self.collectionView?.reloadData()
-                try? AppDelegate.viewContext.save()
-            }
+            let followerMessage = Message(content: text + " " + text, fromUser: self.follower.username, toUser: self.user.username)
+            self.messages?.append(followerMessage)
         }
 
     }
@@ -81,10 +72,9 @@ class MessagesCollectionViewController: UICollectionViewController, UICollection
         super.viewDidLoad()
         collectionView?.backgroundColor = UIColor.white
         self.collectionView!.register(MessageCollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
-        self.messages = Message.getMessages(between: user!, and: follower!, in: AppDelegate.viewContext)
+        self.messages = [Message]()
         view.addSubview(messageInputContainerView)
         view.addConstraintsWithFormat(format: "H:|[v0]|", views: messageInputContainerView)
-//        view.addConstraintsWithFormat(format: "V:[v0(48)]", views: messageInputContainerView)
         bottomConstraint = NSLayoutConstraint(item: messageInputContainerView, attribute: .bottom, relatedBy: .equal, toItem: view, attribute: .bottom, multiplier: 1, constant: 0)
         view.addConstraint(bottomConstraint!)
         setupInputComponents()
@@ -94,8 +84,6 @@ class MessagesCollectionViewController: UICollectionViewController, UICollection
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        print("Test ", self.collectionView!.contentSize.height)
-        print("Test ", self.collectionView!.contentSize.height - view.bounds.height)
         self.collectionView?.setContentOffset(CGPoint(x: 0, y: self.collectionView!.contentSize.height - view.bounds.height), animated: true)
     }
     
@@ -108,8 +96,6 @@ class MessagesCollectionViewController: UICollectionViewController, UICollection
             if isKeyboardShowing {
                 self.view.layoutIfNeeded()
                 UIView.animate(withDuration: 0, delay: 0, options: UIViewAnimationOptions.curveEaseOut, animations: {}, completion: { result in
-                    //let indexPath = IndexPath(item: self.messages!.count - 1, section: 0)
-                    //self.collectionView?.scrollToItem(at: indexPath, at: .bottom, animated: true)
                     let viewHeight = self.view.frame.height - keyboardFrame!.height
                     self.collectionView?.setContentOffset(CGPoint(x: 0, y: (self.collectionView?.contentSize.height)! - viewHeight), animated: false)
                 })
@@ -124,13 +110,12 @@ class MessagesCollectionViewController: UICollectionViewController, UICollection
         messageInputContainerView.addSubview(inputTextView)
         messageInputContainerView.addSubview(sendButton)
         messageInputContainerView.addSubview(topBorderView)
-        messageInputContainerView.addConstraintsWithFormat(format: "H:|-8-[v0][v1(80)]|", views: inputTextView, sendButton)
-        messageInputContainerView.addConstraintsWithFormat(format: "V:|-8-[v0]-8-|", views: inputTextView)
+        messageInputContainerView.addConstraintsWithFormat(format: "H:|-4-[v0][v1(80)]-4-|", views: inputTextView, sendButton)
+        messageInputContainerView.addConstraintsWithFormat(format: "V:|-4-[v0]-4-|", views: inputTextView)
         messageInputContainerView.addConstraintsWithFormat(format: "V:|[v0]|", views: sendButton)
         messageInputContainerView.addConstraintsWithFormat(format: "H:|[v0]|", views: topBorderView)
         messageInputContainerView.addConstraintsWithFormat(format: "V:|[v0(0.5)]", views: topBorderView)
     }
-    
     
 
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -145,10 +130,10 @@ class MessagesCollectionViewController: UICollectionViewController, UICollection
             let messageText = message.content
             let size = CGSize(width: 250, height: 1000)
             let options = NSStringDrawingOptions.usesFontLeading.union(.usesLineFragmentOrigin)
-            let estimatedFrame = NSString(string: messageText!).boundingRect(with: size, options: options, attributes: [NSAttributedStringKey.font: UIFont.systemFont(ofSize: 18)], context: nil)
+            let estimatedFrame = NSString(string: messageText).boundingRect(with: size, options: options, attributes: [NSAttributedStringKey.font: UIFont.systemFont(ofSize: 18)], context: nil)
             
             // Right Bubble
-            if  message.fromUser == user {
+            if  message.fromUser == user.username {
                 cell.messageTextView.frame = CGRect(x: view.frame.width - estimatedFrame.width - 24 - 8 - 4, y: 0, width: estimatedFrame.width + 16, height: estimatedFrame.height + 20)
                 cell.messageTextView.textColor = UIColor.white
                 cell.textBubbleView.frame = CGRect(x: view.frame.width - estimatedFrame.width - 24 - 8 - 16, y: -2, width: estimatedFrame.width + 16 + 8 + 16, height: estimatedFrame.height + 20 + 4)
