@@ -12,7 +12,7 @@ import Foundation
 
 class Message: NSManagedObject {
     
-    static func getSentMessages(user: User, in context: NSManagedObjectContext) -> [Message] {
+    class func getSentMessages(user: User, in context: NSManagedObjectContext) -> [Message] {
         let request: NSFetchRequest<Message> = Message.fetchRequest()
         request.predicate = NSPredicate(format: "fromUser = %@", user)
         request.sortDescriptors = [NSSortDescriptor(key: "timestamp", ascending: false)]
@@ -26,7 +26,7 @@ class Message: NSManagedObject {
         return [Message]()
     }
     
-    static func getReceivedMessages(user: User, in context: NSManagedObjectContext) -> [Message] {
+    class func getReceivedMessages(user: User, in context: NSManagedObjectContext) -> [Message] {
         let request: NSFetchRequest<Message> = Message.fetchRequest()
         request.predicate = NSPredicate(format: "toUser = %@", user)
         request.sortDescriptors = [NSSortDescriptor(key: "timestamp", ascending: false)]
@@ -40,9 +40,9 @@ class Message: NSManagedObject {
         return [Message]()
     }
     
-    static func getMessages(between fromUser: User, and toUser: User, in context: NSManagedObjectContext) -> [Message] {
+    class func getMessages(between fromUser: User, and toUser: User, in context: NSManagedObjectContext) -> [Message] {
         let request: NSFetchRequest<Message> = Message.fetchRequest()
-        request.predicate = NSPredicate(format: "fromUser.username = %@ && toUser.username = %@", fromUser.username!, toUser.username!)
+        request.predicate = NSPredicate(format: "fromUser = %@ && toUser = %@", fromUser, toUser)
         request.sortDescriptors = [NSSortDescriptor(key: "timestamp", ascending: false)]
         
         do {
@@ -54,10 +54,10 @@ class Message: NSManagedObject {
         return [Message]()
     }
     
-    static func sendMessage(from fromUser: User, to toUser: User, content: String, in context: NSManagedObjectContext) -> Message{
+    class func sendMessage(from fromUser: User, to toUser: User, content: String, in context: NSManagedObjectContext) -> Message{
         let message = Message(context: context)
-        message.fromUser = User.getUser(matching: fromUser, in: AppDelegate.viewContext)
-        message.toUser = User.getUser(matching: toUser, in: AppDelegate.viewContext)
+        message.fromUser = fromUser
+        message.toUser = toUser
         message.content = content
         message.timestamp = Date()
         return message

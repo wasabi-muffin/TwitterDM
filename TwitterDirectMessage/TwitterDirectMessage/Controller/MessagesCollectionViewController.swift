@@ -24,6 +24,7 @@ class MessagesCollectionViewController: UICollectionViewController, UICollection
     var messages: [Message]? {
         didSet {
             collectionView?.reloadData()
+            collectionView?.setContentOffset(CGPoint(x: 0, y: self.collectionView!.contentSize.height), animated: false)
         }
     }
     
@@ -55,16 +56,25 @@ class MessagesCollectionViewController: UICollectionViewController, UICollection
     }()
     
     @objc func handleSend() {
-        let message = Message.sendMessage(from: user!, to: follower!, content: inputTextView.text!, in: AppDelegate.viewContext)
-        do {
-            try AppDelegate.viewContext.save() }
-        catch {
-            print("Saving did not work")
+        let text = inputTextView.text!
+        AppDelegate.viewContext.perform {
+            let userMessage = Message.sendMessage(from: self.user!, to: self.follower!, content: text, in: AppDelegate.viewContext)
+            self.messages?.append(userMessage)
+            self.inputTextView.text = nil
+            try? AppDelegate.viewContext.save()
         }
-        print(message)
-        messages?.append(message)
-        //collectionView?.insertItems(at: [IndexPath(item: messages!.count - 1, section: 0)])
-        collectionView?.reloadData()
+//        collectionView?.setContentOffset(CGPoint(x: 0, y: collectionView!.contentSize.height), animated: false)
+//        collectionView?.reloadData()
+        
+        Timer.scheduledTimer(withTimeInterval: 1.0, repeats: false) { (timer) in
+            AppDelegate.viewContext.perform {
+                let followerMessage = Message.sendMessage(from: self.follower!, to: self.user!, content: (text + " " + text), in: AppDelegate.viewContext)
+                self.messages?.append(followerMessage)
+//                self.collectionView?.reloadData()
+                try? AppDelegate.viewContext.save()
+            }
+        }
+
     }
     
     override func viewDidLoad() {
@@ -72,7 +82,6 @@ class MessagesCollectionViewController: UICollectionViewController, UICollection
         collectionView?.backgroundColor = UIColor.white
         self.collectionView!.register(MessageCollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
         self.messages = Message.getMessages(between: user!, and: follower!, in: AppDelegate.viewContext)
-        print(self.messages)
         view.addSubview(messageInputContainerView)
         view.addConstraintsWithFormat(format: "H:|[v0]|", views: messageInputContainerView)
 //        view.addConstraintsWithFormat(format: "V:[v0(48)]", views: messageInputContainerView)
@@ -81,7 +90,13 @@ class MessagesCollectionViewController: UICollectionViewController, UICollection
         setupInputComponents()
         NotificationCenter.default.addObserver(self, selector: #selector(handleKeyboardNotification), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(handleKeyboardNotification), name: NSNotification.Name.UIKeyboardWillHide, object: nil)
-
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        print("Test ", self.collectionView!.contentSize.height)
+        print("Test ", self.collectionView!.contentSize.height - view.bounds.height)
+        self.collectionView?.setContentOffset(CGPoint(x: 0, y: self.collectionView!.contentSize.height - view.bounds.height), animated: true)
     }
     
     var bottomConstraint: NSLayoutConstraint?
@@ -93,7 +108,7 @@ class MessagesCollectionViewController: UICollectionViewController, UICollection
             if isKeyboardShowing {
                 self.view.layoutIfNeeded()
                 UIView.animate(withDuration: 0, delay: 0, options: UIViewAnimationOptions.curveEaseOut, animations: {}, completion: { result in
-                    let indexPath = IndexPath(item: self.messages!.count - 1, section: 0)
+                    //let indexPath = IndexPath(item: self.messages!.count - 1, section: 0)
                     //self.collectionView?.scrollToItem(at: indexPath, at: .bottom, animated: true)
                     let viewHeight = self.view.frame.height - keyboardFrame!.height
                     self.collectionView?.setContentOffset(CGPoint(x: 0, y: (self.collectionView?.contentSize.height)! - viewHeight), animated: false)
